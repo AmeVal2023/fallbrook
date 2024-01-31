@@ -1,0 +1,7 @@
+{
+  "name": "FallbrookMedical",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
