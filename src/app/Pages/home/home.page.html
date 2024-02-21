@@ -1,0 +1,89 @@
+<!--home.page.html-->
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button class="color-white"></ion-menu-button>
+    </ion-buttons>
+    <ion-img class="logo-nav" src="assets/Logo-blanco.png" alt="Preventive Care"></ion-img>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- GRID PARA ORGANIZAR LOS ELEMENTOS -->
+  <ion-grid>
+    <ion-row>
+      <!-- CARD 1 -->
+      <ion-col size="12" size-md="8" size-lg="4">
+        <ion-button class="w-100 px-3 button-info-home" fill="outline" color="secondary">
+          <div class="d-flex justify-content-between align-items-center w-100">
+            <div class="button-info">
+              <h6>View Appoiments: <span class="num-cita" id="num-cita">0</span></h6>
+              <p>Review your medical appointments and come prepared</p>
+            </div>
+            <ion-icon name="arrow-forward-outline" class="ms-4" slot="end" size="large"></ion-icon>
+          </div>
+        </ion-button>
+      </ion-col>
+      <!-- CARD 2 -->
+      <ion-col size="12" size-md="8" size-lg="4">
+        <ion-button class="w-100 px-3 button-info-home" fill="outline" color="secondary">
+          <div class="d-flex justify-content-between align-items-center w-100">
+            <div class="button-info">
+              <h6>Get More Done at Your Visit</h6>
+              <p>Fill a prescription, catch up on immunizations, or get a lab test</p>
+            </div>
+            <ion-icon name="arrow-forward-outline" class="ms-4" slot="end" size="large"></ion-icon>
+          </div>
+        </ion-button>
+      </ion-col>
+      <!-- CARD 3 -->
+      <ion-col size="12" size-md="8" size-lg="4">
+        <ion-button class="w-100 px-3 button-info-home" fill="outline" color="secondary" (click)="openSubscribePopup($event)">
+          <div class="d-flex justify-content-between align-items-center w-100">
+            <div class="button-info">
+              <h6>Susbcribe</h6>
+              <p >Don't miss anything with our newsletter</p>
+            </div>
+            <ion-icon name="mail" class="ms-4" slot="end" size="large"></ion-icon>
+          </div>
+        </ion-button>
+      </ion-col>
+      <!-- CARD 4 -->
+      <ion-col size="12" size-md="8" size-lg="4">
+        <ion-button class="w-100 px-3 button-info-home" fill="outline" color="secondary" (click)="openMyECW()">
+          <div class="d-flex justify-content-between align-items-center w-100">
+            <div class="button-info">
+              <h6>Login My ECW</h6>
+              <p>You can enter your ECW from here</p>
+            </div>
+            <ion-icon name="person" class="ms-4" slot="end" size="large"></ion-icon>
+          </div>
+        </ion-button>
+      </ion-col>
+      <!-- CARD 5 -->
+      <ion-col size="12" size-md="8" size-lg="4">
+        <ion-button class="w-100 px-3 button-info-home" color="warning">
+          <div class="d-flex justify-content-between align-items-center w-100">
+            <div class="button-info">
+              <h6><strong>COVID-19:</strong><span>Latest updates about the vaccine, booster shots, testing, how to protect yourself and get care.</span></h6>
+            </div>
+            <ion-icon name="arrow-forward-outline" class="ms-4" slot="end" size="large"></ion-icon>
+          </div>
+        </ion-button>
+      </ion-col>
+      <!-- CARD 5 -->
+      <ion-col size="12" size-md="8" size-lg="4">
+        <ion-button class="w-100 px-3 button-info-home color-gray">
+          <div class="d-flex justify-content-between align-items-center w-100">
+            <div class="button-info box-gray">
+              <h6><strong>GET THE FLUE SHOT:</strong><span>A safe, effective way to protect what you love. Find a location.</span></h6>
+            </div>
+            <ion-icon name="arrow-forward-outline" class="ms-4 black" slot="end" size="large"></ion-icon>
+          </div>
+        </ion-button>
+      </ion-col>   
+    </ion-row>
+  </ion-grid>
+  <!--NAVEGACION POR BOTON EN HTML-->
+  <ion-button [routerLink]="['/blog']">Go to Blog</ion-button>
+</ion-content>

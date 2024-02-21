@@ -1,0 +1,31 @@
+<!--subscribe-popup.component.html-->
+<ion-content>
+  <form (ngSubmit)="subscribe()" [formGroup]="subscribeForm">
+    <!-- Campo de correo electrónico (requerido y válido) -->
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="emailControl && emailControl.hasError('required')">
+      <ion-text color="danger">Email is required.</ion-text>
+    </ion-item>
+    <ion-item *ngIf="emailControl && emailControl.hasError('email')">
+      <ion-text color="danger">Invalid email format.</ion-text>
+    </ion-item>
+
+    <!-- Campo de selección de idioma (requerido) -->
+    <ion-item>
+      <ion-label>Choose your Language</ion-label>
+      <ion-select formControlName="selectedLanguage">
+        <ion-select-option value="english">English</ion-select-option>
+        <ion-select-option value="spanish">Spanish</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item *ngIf="languageControl && languageControl.hasError('required')">
+      <ion-text color="danger">Language is required.</ion-text>
+    </ion-item>
+
+    <!-- Botón de suscripción -->
+    <ion-button type="submit" expand="full">Subscribe</ion-button>
+  </form>
+</ion-content>

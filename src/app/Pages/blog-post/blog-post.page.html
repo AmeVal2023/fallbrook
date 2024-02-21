@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detalles del Post</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Muestra la imagen -->
+  <ion-img [src]="post?._embedded['wp:featuredmedia'][0].source_url" alt="Post Image"></ion-img>
+
+  <!-- Muestra los detalles del post -->
+  <ion-card class="post-fmc">
+    <ion-card-header>
+      <ion-card-title>{{ post?.title.rendered }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content class="post-content">
+      <div [innerHTML]="post?.content?.rendered"></div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+<div class="space-small"></div>

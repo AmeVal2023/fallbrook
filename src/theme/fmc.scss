@@ -1,0 +1,84 @@
+ion-popover {
+    &::part(content) {
+      min-width: 360px;
+    }
+  }
+  .showPassword {
+    top: 8px;
+    position: relative;
+}
+  .num-cita{
+      background: #b73127;
+      color: white !important;
+      border-radius: 50%;
+      padding: 3px 8px;
+      font-size: 1rem;
+  }
+  .button-info-home::part(native) {
+    border-radius: 20px;
+    padding: 20px;
+  }
+  .button-info{
+    max-width: 80%;
+    white-space: normal !important;
+    text-transform: capitalize !important;
+    text-align: left !important;
+  }
+  .button-info p, .box-gray h6, .black{
+    color: #000000;
+  }
+  .button-info h6 span{
+    color: #444444;
+    font-size: .9rem;
+    margin-left: 5px;
+    letter-spacing: normal;
+  }
+  .gray{
+    color: #444444;
+  }
+  .space-small{
+    height: 60px !important;
+  }
+  .post-fmc ion-card-title, .post-content div h2{
+    color: #29345d;
+  }
+  .post-content div h2{
+    margin-top: 1rem;
+    font-weight: bold;
+  } 
+  .post-content div figure img, .post-content div a img{
+    height: auto;
+  }
+  .logo-nav{
+    width: 320px;
+    margin: .5rem auto; 
+  }
+  .icon-circle{
+    border-radius: 50%;
+    background: #ffffff;
+    padding: 8px;
+  }
+  .icon-circle .icon-home{
+    padding: 15px;
+      border-radius: 50%;
+      background: #29345d;
+  }
+  .icon-services{
+    display: flex;
+      justify-content: center;
+      margin-top: -1rem;
+  }
+  /* Estilo personalizado para el padding del ion-card-header */
+  .custom-card-header {
+    padding-top: 0;
+  }
+  /* Estilo personalizado para el tamaño del ion-card-title */
+  .custom-card-title {
+    font-size: 1.25rem; /* Puedes ajustar este valor según tus necesidades */
+  }
+  .color-gray::part(native){
+    background-color: #d3d6de !important;
+  }
+  .color-white{
+      color: #ffffff !important;
+  }

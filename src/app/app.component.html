@@ -3,24 +3,34 @@
     <ion-menu contentId="main-content" type="overlay">
       <ion-content>
         <ion-list id="inbox-list">
-          <ion-list-header>Inbox</ion-list-header>
-          <ion-note>hi&#64;ionicframework.com</ion-note>
-
+          <img src="assets/Logo-FMC.webp" alt="Fallbrook Medical Center">
+          <!-- Verifica si hay un usuario autenticado antes de mostrar el mensaje de bienvenida y el botón de logout -->
+          <ion-note class="my-2 w-100" *ngIf="userEmail && isAuthenticated">Bienvenido: {{ userEmail }}</ion-note>
+          <ion-button class="px-3 w-100" (click)="logout()" *ngIf="userEmail && isAuthenticated">Logout</ion-button>
+          <!-- Opción para ocultar Login y Register cuando el usuario está autenticado -->
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
-            <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
-              <ion-icon aria-hidden="true" slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
-              <ion-label>{{ p.title }}</ion-label>
-            </ion-item>
-          </ion-menu-toggle>
-        </ion-list>
-
-        <ion-list id="labels-list">
-          <ion-list-header>Labels</ion-list-header>
-
-          <ion-item *ngFor="let label of labels" lines="none">
-            <ion-icon aria-hidden="true" slot="start" ios="bookmark-outline" md="bookmark-sharp"></ion-icon>
-            <ion-label>{{ label }}</ion-label>
-          </ion-item>
+            <ng-container *ngIf="isAuthenticated && (p.title !== 'Login' && p.title !== 'Register') || (!isAuthenticated && (p.title === 'Login' || p.title === 'Register' || p.title === 'Blog'))">
+              <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
+                <ion-icon aria-hidden="true" slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+                <ion-label>{{ p.title }}</ion-label>
+              </ion-item>
+            </ng-container>
+          </ion-menu-toggle>          
+          <ion-button class="px-3 w-100" [routerLink]="['/tabs/contact']">Contact Us</ion-button>
+          <!-- Línea divisora -->
+          <hr class="hr" />
+          <!-- Redes sociales con enlaces a URLs específicas -->
+          <ion-row class="ion-justify-content-center">
+            <ion-col size="auto" class="" (click)="openSocialMedia('https://www.facebook.com/fallbrookmedical')">
+              <img src="assets/icon/facebook.png" width="38" alt="Facebook" class="social-media-icon">
+            </ion-col>
+            <ion-col size="auto" class="" (click)="openSocialMedia('https://www.instagram.com/fallbrookmedicalcenter')">
+              <img src="assets/icon/instagram.png" width="38" alt="Instagram" class="social-media-icon">
+            </ion-col>
+            <ion-col size="auto" class="" (click)="openSocialMedia('https://twitter.com/search?q=fallbrook%20medical&src=typed_query')">
+              <img src="assets/icon/twitter.png" width="38" alt="Twitter" class="social-media-icon">
+            </ion-col>
+          </ion-row>
         </ion-list>
       </ion-content>
     </ion-menu>

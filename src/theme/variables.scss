@@ -4,20 +4,20 @@
 /** Ionic CSS Variables **/
 :root {
   /** primary **/
-  --ion-color-primary: #3880ff;
+  --ion-color-primary: #29345d;
   --ion-color-primary-rgb: 56, 128, 255;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255, 255, 255;
-  --ion-color-primary-shade: #3171e0;
-  --ion-color-primary-tint: #4c8dff;
+  --ion-color-primary-shade: #242e52;
+  --ion-color-primary-tint: #3e486d;
 
   /** secondary **/
-  --ion-color-secondary: #3dc2ff;
+  --ion-color-secondary: #0179b0;
   --ion-color-secondary-rgb: 61, 194, 255;
   --ion-color-secondary-contrast: #ffffff;
   --ion-color-secondary-contrast-rgb: 255, 255, 255;
-  --ion-color-secondary-shade: #36abe0;
-  --ion-color-secondary-tint: #50c8ff;
+  --ion-color-secondary-shade: #016a9b;
+  --ion-color-secondary-tint: #1a86b8;
 
   /** tertiary **/
   --ion-color-tertiary: #5260ff;
@@ -74,6 +74,14 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  /** fallbrook **/
+	--ion-color-fallbrook: #29345d;
+	--ion-color-fallbrook-rgb: 56, 128, 255;
+	--ion-color-fallbrook-contrast: #ffffff;
+	--ion-color-fallbrook-contrast-rgb: 255,255,255;
+	--ion-color-fallbrook-shade: #242e52;
+	--ion-color-fallbrook-tint: #3e486d;
 }
 
 @media (prefers-color-scheme: dark) {

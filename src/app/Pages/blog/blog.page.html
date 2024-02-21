@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button class="color-white"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Blog</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Ion-Segment para seleccionar la categoría -->
+  <ion-segment (ionChange)="segmentChanged($event)" scrollable>
+    <ion-segment-button value=96 checked>
+      All
+    </ion-segment-button>
+    <ion-segment-button value=358>
+      News
+    </ion-segment-button>
+    <ion-segment-button value=357>
+      Healthy Living
+    </ion-segment-button>
+    <ion-segment-button value=356>
+      Chronic Illnesses
+    </ion-segment-button>
+    <ion-segment-button value=355>
+      Gut health
+    </ion-segment-button>
+    <ion-segment-button value=354>
+      Senior Care
+    </ion-segment-button>
+    <ion-segment-button value=353>
+      Mental Health
+    </ion-segment-button>
+  </ion-segment>
+
+  <!-- Lista de Tarjetas de Posts según la categoría seleccionada -->
+  <ion-row>
+    <ion-col size="12" size-md="8" size-lg="4" *ngFor="let post of filteredPosts">
+      <ion-card>
+        <!-- Accede directamente a la URL de la imagen desde _embedded -->
+        <ion-img [src]="post._embedded['wp:featuredmedia'][0].source_url" alt="Post Image"></ion-img>
+        <ion-card-header>
+          <ion-card-title>{{ post.title.rendered }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <!-- Puedes utilizar innerHTML para renderizar el HTML en Angular -->
+          <div [innerHTML]="post.excerpt.rendered"></div>
+          <!-- Agrega un botón/enlace para ir a los detalles -->
+          <ion-button class="w-100" (click)="goToPostDetail(post.id)">Ver Detalles</ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-content>
+
